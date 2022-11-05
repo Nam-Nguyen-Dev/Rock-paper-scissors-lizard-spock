@@ -15,6 +15,13 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
+  else if (page == '/images/RPSLS.webp') {
+    fs.readFile('images/RPSLS.webp', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/webp'});
+      res.write(data);
+      res.end();
+    });
+  }
   else if (page == '/otherpage') {
     fs.readFile('otherpage.html', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
