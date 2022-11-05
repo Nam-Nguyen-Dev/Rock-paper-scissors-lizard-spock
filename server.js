@@ -22,6 +22,41 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
+  else if (page == '/images/rock.png') {
+    fs.readFile('images/rock.png', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/png'});
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == '/images/paper.png') {
+    fs.readFile('images/paper.png', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/png'});
+      res.write(data);
+      res.end();
+    });
+  }
+  else if (page == '/images/scissors.png') {
+    fs.readFile('images/scissors.png', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/png'});
+      res.write(data);
+      res.end();
+    }); 
+  }   
+else if (page == '/images/lizard.png') {
+    fs.readFile('images/lizard.png', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/png'});
+      res.write(data);
+      res.end();
+    });
+  }
+else if (page == '/images/spock.png') {
+    fs.readFile('images/spock.png', function(err, data) {
+      res.writeHead(200, {'Content-Type': 'image/png'});
+      res.write(data);
+      res.end();
+    });
+  }
   else if (page == '/otherpage') {
     fs.readFile('otherpage.html', function(err, data) {
       res.writeHead(200, {'Content-Type': 'text/html'});
