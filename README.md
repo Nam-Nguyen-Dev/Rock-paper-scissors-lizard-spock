@@ -2,7 +2,7 @@
 
 As seen on hit tv show, Big Bang Theory!
 
-<img src="#Screenshot.png" alt="Screenshot of RPSLS website">
+<img src="https://github.com/Nam-Nguyen-Dev/rock-paper-scissors-lizard-spock/blob/main/images/Screenshot.png" alt="Screenshot of RPSLS website">
 
 
 ## How It's Made:
