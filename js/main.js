@@ -1,17 +1,3 @@
-/* document.querySelectorAll('img').forEach(elem => elem.addEventListener('click', makeReq))
-
-async function makeReq(){
-
-  const userChoice = document.querySelector("#userName").value;
-  const res = await fetch(`/api?student=${userName}`)
-  const data = await res.json()
-
-  console.log(data);
-  document.querySelector("#personName").textContent = data.name
-  document.querySelector("#personStatus").textContent = data.status
-  document.querySelector("#personOccupation").textContent = data.currentOccupation
-} */
-
 const userChoices = document.querySelectorAll('.player1')
 userChoices.forEach(choice => {
   choice.addEventListener('click', async (e) => {
@@ -20,8 +6,15 @@ userChoices.forEach(choice => {
     const data = await res.json()
     console.log(data)
 
-    
+    document.querySelector('#choice1').innerText = `You chose ${pick}!`
+    document.querySelector('#choice2').innerText = `Your opponent chooses...${data.computer}!`
     document.querySelector('#status').innerText = `You ${data.status}!`
-    //document.querySelector('#score').innerText = `Total Score: ${data.currentScore}`
+    if(data.status === 'Win'){
+      document.querySelector('body').style.backgroundColor = "green"
+    } else if(data.status === 'Lose'){
+      document.querySelector('body').style.backgroundColor = "red"
+    } else if(data.status === 'Tie'){
+      document.querySelector('body').style.backgroundColor = "orange"
+    }
   })
 })

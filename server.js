@@ -81,8 +81,9 @@ else if (page == '/images/spock.png') {
         res.writeHead(200, {'Content-Type': 'application/json'});
         const objToJson = {
           name: "Player1",
-          status: "Lost",
-          currentScore: playerScore
+          status: "Lose",
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'rock' && (computerChoice == 'scissors' || computerChoice == 'lizard')){
@@ -90,7 +91,8 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Win",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'paper' && (computerChoice == 'rock' || computerChoice == 'spock')){
@@ -98,7 +100,8 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Win",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'paper' && (computerChoice == 'scissors' || computerChoice == 'lizard')){
@@ -106,14 +109,16 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Lose",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'scissors' && (computerChoice == 'paper' || computerChoice == 'lizard')){
         res.writeHead(200, {'Content-Type': 'application/json'});        const objToJson = {
           name: "Player1",
           status: "Win",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'scissors' && (computerChoice == 'spock' || computerChoice == 'rock')){
@@ -121,14 +126,16 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Lose",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'lizard' && (computerChoice == 'paper' || computerChoice == 'spock')){
         res.writeHead(200, {'Content-Type': 'application/json'});        const objToJson = {
           name: "Player1",
           status: "Win",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'lizard' && (computerChoice == 'scissors' || computerChoice == 'rock')){
@@ -136,14 +143,16 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Lose",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'spock' && (computerChoice == 'scissors' || computerChoice == 'rock')){
         res.writeHead(200, {'Content-Type': 'application/json'});        const objToJson = {
           name: "Player1",
           status: "Win",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       } else if(params['choice']== 'spock' && (computerChoice == 'paper' || computerChoice == 'lizard')){
@@ -151,11 +160,20 @@ else if (page == '/images/spock.png') {
         const objToJson = {
           name: "Player1",
           status: "Lose",
-          currentScore: playerScore
+          currentScore: playerScore,
+          computer: computerChoice
+        }
+        res.end(JSON.stringify(objToJson));
+      } else if(params['choice'] === computerChoice) {
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        const objToJson = {
+          name: "Player1",
+          status: "Tie",
+          currentScore: playerScore,
+          computer: computerChoice
         }
         res.end(JSON.stringify(objToJson));
       }
-
     }}
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {

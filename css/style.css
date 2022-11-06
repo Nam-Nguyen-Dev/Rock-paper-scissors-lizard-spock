@@ -1,6 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  padding-left: 50px
+}
 h1{
   color: red;
 }
 img.player1{
   cursor: pointer;
+}
+
+section.col-2{
+  display: flex;
+  height: 300px;
+}
+section.col-1-2{
+  width: 33%;
+}
+img#game{
+  max-height: 100%;
 }
